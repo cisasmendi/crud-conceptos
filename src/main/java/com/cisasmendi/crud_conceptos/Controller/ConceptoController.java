@@ -1,4 +1,4 @@
-package com.cisasmendi.crud_conceptos.Controller;
+package com.cisasmendi.crud_conceptos.controller;
 
 
 import java.util.List;

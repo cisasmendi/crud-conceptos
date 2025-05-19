@@ -48,8 +48,11 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-
-
+        <!-- amqp: para comunicarse con rabbitmq -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
 
         <!-- Web: Para construir una API RESTful -->
         <dependency>
