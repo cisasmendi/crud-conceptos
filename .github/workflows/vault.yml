@@ -72,7 +72,7 @@ jobs:
               docker rm conceptos_back_java || true 
               docker rmi conceptos_back_java:latest || true       
               docker build -t conceptos_back_java:latest .             
-              docker run  --restart=always -d -p 0.0.0.0:8500:8080 --name conceptos_back_java --network rabbitmq_rabbitmq_net  conceptos_back_java:latest
+              docker run -d --restart=always --network rabbitmq_rabbitmq_net -e SPRING_RABBITMQ_HOST='rabbitmq' -p 0.0.0.0:8500:8080 --name conceptos_back_java conceptos_back_java:latest
               docker logs conceptos_back_java
               exit   
         
