@@ -67,6 +67,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        
+        
+        <!-- para comunicarse con redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
 
         <!-- JPA: Para acceder a la base de datos de forma más simple con ORM -->
         <dependency>

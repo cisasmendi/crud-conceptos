@@ -2,16 +2,16 @@ package com.cisasmendi.crud_conceptos.dto;
 
 import java.util.Map;
 
-public class MensajeDTO {
+public class MensajeSendDTO {
     private String id;
     private String expresion;
     private Map<String, Object> variables;
 
-    public MensajeDTO() {
+    public MensajeSendDTO() {
         // Constructor vacío requerido por Spring
     }
 
-    public MensajeDTO(String id, String expresion, Map<String, Object> variables) {
+    public MensajeSendDTO(String id, String expresion, Map<String, Object> variables) {
         this.id = id;
         this.expresion = expresion;
         this.variables = variables;
