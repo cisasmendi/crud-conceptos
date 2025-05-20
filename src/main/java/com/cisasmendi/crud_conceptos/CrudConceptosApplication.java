@@ -13,7 +13,9 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class CrudConceptosApplication {
 
 	public static void main(String[] args) {
-		Dotenv dotenv = Dotenv.load();
+		Dotenv dotenv = Dotenv.configure()
+                      .ignoreIfMissing() // esta línea evita el crash si el archivo no existe
+                      .load();
 
 		dotenv.entries().forEach(entry -> System.setProperty(entry.getKey(), entry.getValue()));
 		SpringApplication.run(CrudConceptosApplication.class, args);
