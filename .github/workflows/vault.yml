@@ -54,8 +54,7 @@ jobs:
             password: ${{ env.PASS }}
             port: ${{ env.PORT }}
             script: |
-              echo "Downloading repository..."
-              
+              echo "Downloading repository..."              
               # Obtener nombre del repositorio (sin el owner)
               echo "GITHUB_REPOSITORY=git@github.com:${{ github.repository }}.git"  
               REPO_NAME=$(basename "${{ github.repository }}")   
