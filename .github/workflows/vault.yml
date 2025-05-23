@@ -73,7 +73,7 @@ jobs:
               docker build -t conceptos_back_java:latest . 
               docker stop conceptos_back_redis || true
               docker rm conceptos_back_redis || true   
-              docker run --network rabbitmq_rabbitmq_net --name conceptos_back_redis -p 0.0.0.0:6380:6379 -d redis:latest      
+              docker run --network rabbitmq_rabbitmq_net --name conceptos_back_redis -p 0.0.0.0:6380:6379 -d redis:latest  redis-server --requirepass "${{ secrets.REDIS_PASS }}" 
               docker run -d --restart=always --network rabbitmq_rabbitmq_net -e REDIS_HOST='${{ secrets.REDIS_HOST }}' -e REDIS_PORT='${{ secrets.REDIS_PORT }}'  -e DB_URL='${{ secrets.DB_URL }}' -e DB_USS='${{ secrets.DB_USS }}' -e DB_PASS='${{ secrets.DB_PASS }}' -e SPRING_RABBITMQ_HOST='${{ secrets.SPRING_RABBITMQ_HOST }}' -e SPRING_RABBITMQ_PORT='${{ secrets.SPRING_RABBITMQ_PORT }}' -e SPRING_RABBITMQ_USERNAME='${{ secrets.SPRING_RABBITMQ_USERNAME }}' -e SPRING_RABBITMQ_PASSWORD='${{ secrets.SPRING_RABBITMQ_PASSWORD }}' -p 0.0.0.0:8500:8080 --name conceptos_back_java conceptos_back_java:latest
               docker logs conceptos_back_java
               exit   
